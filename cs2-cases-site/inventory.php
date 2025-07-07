@@ -164,6 +164,35 @@ if (!isset($_SESSION['balance'])) {
             opacity: 0.9;
             font-size: 0.9rem;
         }
+
+        .item-actions {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+        }
+
+        .sell-btn {
+            width: 100%;
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #28a745, #34ce57);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .sell-btn:hover {
+            background: linear-gradient(45deg, #34ce57, #28a745);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -175,11 +204,13 @@ if (!isset($_SESSION['balance'])) {
                     <i class="fas fa-crosshairs"></i>
                     <span>CS2 CASES</span>
                 </div>
-                <nav class="nav">
-                    <a href="index.php" class="nav-link">Кейсы</a>
-                    <a href="inventory.php" class="nav-link active">Инвентарь</a>
-                    <a href="stats.php" class="nav-link">Статистика</a>
-                </nav>
+                                 <nav class="nav">
+                     <a href="index.php" class="nav-link">Кейсы</a>
+                     <a href="inventory.php" class="nav-link active">Инвентарь</a>
+                     <a href="upgrade.php" class="nav-link">Апгрейд</a>
+                     <a href="stats.php" class="nav-link">Статистика</a>
+                     <a href="profile.php" class="nav-link">Профиль</a>
+                 </nav>
                 <div class="balance">
                     <i class="fas fa-coins"></i>
                     <span><?php echo number_format($_SESSION['balance']); ?></span>
@@ -281,11 +312,21 @@ if (!isset($_SESSION['balance'])) {
                             <div class="item-rarity-badge" style="background-color: <?php echo $item['color']; ?>; color: <?php echo ($item['rarity'] === 'consumer' || $item['rarity'] === 'special') ? '#000' : '#fff'; ?>;">
                                 <?php echo htmlspecialchars($item['rarity_name']); ?>
                             </div>
-                            <div class="item-date">
-                                Получено: <?php echo date('d.m.Y H:i', strtotime($item['obtained_at'])); ?>
-                            </div>
+                                                    <div class="item-date">
+                            Получено: <?php echo date('d.m.Y H:i', strtotime($item['obtained_at'])); ?>
+                        </div>
+                        <div class="item-actions">
+                            <?php 
+                            $baseItem = findItemByName($item['name'], $items, $rarities);
+                            $sellPrice = $baseItem ? intval($baseItem['price'] * 0.8) : 0;
+                            ?>
+                            <button class="sell-btn" onclick="sellItem('<?php echo htmlspecialchars($item['id']); ?>', <?php echo $sellPrice; ?>)">
+                                <i class="fas fa-dollar-sign"></i>
+                                Продать за <?php echo number_format($sellPrice); ?>
+                            </button>
                         </div>
                     </div>
+                </div>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -309,6 +350,39 @@ if (!isset($_SESSION['balance'])) {
                     item.style.display = 'none';
                 }
             });
+        }
+
+        function sellItem(itemId, sellPrice) {
+            if (confirm(`Вы уверены, что хотите продать этот предмет за ${sellPrice.toLocaleString()} монет?`)) {
+                fetch('sell_item.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({item_id: itemId})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Предмет продан за ${data.sell_price.toLocaleString()} монет!`);
+                        
+                        // Обновляем баланс в header
+                        const balanceElement = document.querySelector('.balance span');
+                        if (balanceElement) {
+                            balanceElement.textContent = data.new_balance.toLocaleString();
+                        }
+                        
+                        // Перезагружаем страницу для обновления инвентаря
+                        window.location.reload();
+                    } else {
+                        alert('Ошибка при продаже: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Произошла ошибка при продаже предмета!');
+                });
+            }
         }
     </script>
 </body>

@@ -12,58 +12,58 @@ $rarities = [
     'special' => ['name' => 'Special Items', 'color' => '#ffd700', 'chance' => 0.26]
 ];
 
-// Предметы по типам
+// Предметы по типам с ценами
 $items = [
     'consumer' => [
-        ['name' => 'P2000 | Granite Marbleized', 'type' => 'Pistol'],
-        ['name' => 'Tec-9 | Army Mesh', 'type' => 'Pistol'],
-        ['name' => 'MAC-10 | Silver', 'type' => 'SMG'],
-        ['name' => 'MP9 | Storm', 'type' => 'SMG'],
-        ['name' => 'UMP-45 | Urban DDPAT', 'type' => 'SMG'],
-        ['name' => 'P90 | Storm', 'type' => 'SMG'],
-        ['name' => 'Galil AR | Hunting Blind', 'type' => 'Rifle'],
-        ['name' => 'FAMAS | Colony', 'type' => 'Rifle'],
-        ['name' => 'M4A4 | Urban DDPAT', 'type' => 'Rifle'],
-        ['name' => 'AK-47 | Safari Mesh', 'type' => 'Rifle']
+        ['name' => 'P2000 | Granite Marbleized', 'type' => 'Pistol', 'price' => 15],
+        ['name' => 'Tec-9 | Army Mesh', 'type' => 'Pistol', 'price' => 12],
+        ['name' => 'MAC-10 | Silver', 'type' => 'SMG', 'price' => 18],
+        ['name' => 'MP9 | Storm', 'type' => 'SMG', 'price' => 20],
+        ['name' => 'UMP-45 | Urban DDPAT', 'type' => 'SMG', 'price' => 25],
+        ['name' => 'P90 | Storm', 'type' => 'SMG', 'price' => 30],
+        ['name' => 'Galil AR | Hunting Blind', 'type' => 'Rifle', 'price' => 35],
+        ['name' => 'FAMAS | Colony', 'type' => 'Rifle', 'price' => 40],
+        ['name' => 'M4A4 | Urban DDPAT', 'type' => 'Rifle', 'price' => 45],
+        ['name' => 'AK-47 | Safari Mesh', 'type' => 'Rifle', 'price' => 50]
     ],
     'industrial' => [
-        ['name' => 'P250 | Steel Disruption', 'type' => 'Pistol'],
-        ['name' => 'Five-SeveN | Forest Night', 'type' => 'Pistol'],
-        ['name' => 'MP7 | Forest DDPAT', 'type' => 'SMG'],
-        ['name' => 'MP5-SD | Phosphor', 'type' => 'SMG'],
-        ['name' => 'XM1014 | Blue Steel', 'type' => 'Shotgun'],
-        ['name' => 'G3SG1 | Green Apple', 'type' => 'Sniper'],
-        ['name' => 'SCAR-20 | Green Marine', 'type' => 'Sniper']
+        ['name' => 'P250 | Steel Disruption', 'type' => 'Pistol', 'price' => 80],
+        ['name' => 'Five-SeveN | Forest Night', 'type' => 'Pistol', 'price' => 85],
+        ['name' => 'MP7 | Forest DDPAT', 'type' => 'SMG', 'price' => 90],
+        ['name' => 'MP5-SD | Phosphor', 'type' => 'SMG', 'price' => 95],
+        ['name' => 'XM1014 | Blue Steel', 'type' => 'Shotgun', 'price' => 100],
+        ['name' => 'G3SG1 | Green Apple', 'type' => 'Sniper', 'price' => 110],
+        ['name' => 'SCAR-20 | Green Marine', 'type' => 'Sniper', 'price' => 120]
     ],
     'mil_spec' => [
-        ['name' => 'Glock-18 | Blue Fissure', 'type' => 'Pistol'],
-        ['name' => 'P250 | Hive', 'type' => 'Pistol'],
-        ['name' => 'MP9 | Deadly Poison', 'type' => 'SMG'],
-        ['name' => 'UMP-45 | Corporal', 'type' => 'SMG'],
-        ['name' => 'M4A1-S | Bright Water', 'type' => 'Rifle'],
-        ['name' => 'AK-47 | Blue Laminate', 'type' => 'Rifle']
+        ['name' => 'Glock-18 | Blue Fissure', 'type' => 'Pistol', 'price' => 350],
+        ['name' => 'P250 | Hive', 'type' => 'Pistol', 'price' => 380],
+        ['name' => 'MP9 | Deadly Poison', 'type' => 'SMG', 'price' => 420],
+        ['name' => 'UMP-45 | Corporal', 'type' => 'SMG', 'price' => 450],
+        ['name' => 'M4A1-S | Bright Water', 'type' => 'Rifle', 'price' => 500],
+        ['name' => 'AK-47 | Blue Laminate', 'type' => 'Rifle', 'price' => 580]
     ],
     'restricted' => [
-        ['name' => 'Desert Eagle | Cobalt Disruption', 'type' => 'Pistol'],
-        ['name' => 'P90 | Cold Blooded', 'type' => 'SMG'],
-        ['name' => 'AWP | Electric Hive', 'type' => 'Sniper'],
-        ['name' => 'M4A4 | X-Ray', 'type' => 'Rifle']
+        ['name' => 'Desert Eagle | Cobalt Disruption', 'type' => 'Pistol', 'price' => 1200],
+        ['name' => 'P90 | Cold Blooded', 'type' => 'SMG', 'price' => 1350],
+        ['name' => 'AWP | Electric Hive', 'type' => 'Sniper', 'price' => 1800],
+        ['name' => 'M4A4 | X-Ray', 'type' => 'Rifle', 'price' => 1500]
     ],
     'classified' => [
-        ['name' => 'AK-47 | Case Hardened', 'type' => 'Rifle'],
-        ['name' => 'M4A1-S | Atomic Alloy', 'type' => 'Rifle'],
-        ['name' => 'AWP | Lightning Strike', 'type' => 'Sniper']
+        ['name' => 'AK-47 | Case Hardened', 'type' => 'Rifle', 'price' => 4500],
+        ['name' => 'M4A1-S | Atomic Alloy', 'type' => 'Rifle', 'price' => 4200],
+        ['name' => 'AWP | Lightning Strike', 'type' => 'Sniper', 'price' => 5800]
     ],
     'covert' => [
-        ['name' => 'AK-47 | Fire Serpent', 'type' => 'Rifle'],
-        ['name' => 'M4A4 | Howl', 'type' => 'Rifle'],
-        ['name' => 'AWP | Dragon Lore', 'type' => 'Sniper']
+        ['name' => 'AK-47 | Fire Serpent', 'type' => 'Rifle', 'price' => 15000],
+        ['name' => 'M4A4 | Howl', 'type' => 'Rifle', 'price' => 18000],
+        ['name' => 'AWP | Dragon Lore', 'type' => 'Sniper', 'price' => 25000]
     ],
     'special' => [
-        ['name' => '★ Karambit | Fade', 'type' => 'Knife'],
-        ['name' => '★ Butterfly Knife | Crimson Web', 'type' => 'Knife'],
-        ['name' => '★ M9 Bayonet | Doppler', 'type' => 'Knife'],
-        ['name' => '★ Gut Knife | Tiger Tooth', 'type' => 'Knife']
+        ['name' => '★ Karambit | Fade', 'type' => 'Knife', 'price' => 45000],
+        ['name' => '★ Butterfly Knife | Crimson Web', 'type' => 'Knife', 'price' => 35000],
+        ['name' => '★ M9 Bayonet | Doppler', 'type' => 'Knife', 'price' => 40000],
+        ['name' => '★ Gut Knife | Tiger Tooth', 'type' => 'Knife', 'price' => 28000]
     ]
 ];
 
@@ -118,5 +118,53 @@ function getRandomItem($rarities, $items) {
     $item['rarity_name'] = $rarities['consumer']['name'];
     $item['color'] = $rarities['consumer']['color'];
     return $item;
+}
+
+// Функция для поиска предмета по имени
+function findItemByName($itemName, $items, $rarities) {
+    foreach ($items as $rarity => $rarityItems) {
+        foreach ($rarityItems as $item) {
+            if ($item['name'] === $itemName) {
+                $item['rarity'] = $rarity;
+                $item['rarity_name'] = $rarities[$rarity]['name'];
+                $item['color'] = $rarities[$rarity]['color'];
+                return $item;
+            }
+        }
+    }
+    return null;
+}
+
+// Функция для получения всех предметов определенной редкости
+function getItemsByRarity($rarity, $items, $rarities) {
+    if (!isset($items[$rarity])) {
+        return [];
+    }
+    
+    $result = [];
+    foreach ($items[$rarity] as $item) {
+        $item['rarity'] = $rarity;
+        $item['rarity_name'] = $rarities[$rarity]['name'];
+        $item['color'] = $rarities[$rarity]['color'];
+        $result[] = $item;
+    }
+    return $result;
+}
+
+// Функция для определения возможности апгрейда
+function canUpgrade($fromRarity, $toRarity) {
+    $rarityLevels = ['consumer' => 1, 'industrial' => 2, 'mil_spec' => 3, 'restricted' => 4, 'classified' => 5, 'covert' => 6, 'special' => 7];
+    
+    $fromLevel = $rarityLevels[$fromRarity] ?? 0;
+    $toLevel = $rarityLevels[$toRarity] ?? 0;
+    
+    return $toLevel > $fromLevel && $toLevel <= $fromLevel + 2;
+}
+
+// Функция для расчета стоимости апгрейда
+function getUpgradeCost($fromItem, $toItem) {
+    $baseCost = $toItem['price'] - $fromItem['price'];
+    $fee = $baseCost * 0.1; // 10% комиссия
+    return max(0, $baseCost + $fee);
 }
 ?>

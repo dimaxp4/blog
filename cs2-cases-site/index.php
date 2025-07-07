@@ -36,7 +36,9 @@ if (!isset($_SESSION['inventory'])) {
                 <nav class="nav">
                     <a href="index.php" class="nav-link active">Кейсы</a>
                     <a href="inventory.php" class="nav-link">Инвентарь</a>
+                    <a href="upgrade.php" class="nav-link">Апгрейд</a>
                     <a href="stats.php" class="nav-link">Статистика</a>
+                    <a href="profile.php" class="nav-link">Профиль</a>
                 </nav>
                 <div class="balance">
                     <i class="fas fa-coins"></i>

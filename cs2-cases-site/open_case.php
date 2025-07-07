@@ -66,6 +66,23 @@ $wonItem['id'] = uniqid();
 $wonItem['obtained_at'] = date('Y-m-d H:i:s');
 $wonItem['case_id'] = $caseId;
 
+// Обновляем статистику
+if (!isset($_SESSION['stats'])) {
+    $_SESSION['stats'] = [
+        'cases_opened' => 0,
+        'total_spent' => 0,
+        'total_sold' => 0,
+        'total_earned' => 0,
+        'total_upgrades' => 0,
+        'upgrade_cost_spent' => 0,
+        'items_sold' => [],
+        'upgrades_history' => []
+    ];
+}
+
+$_SESSION['stats']['cases_opened']++;
+$_SESSION['stats']['total_spent'] += $price;
+
 // Возвращаем результат
 echo json_encode([
     'success' => true,
